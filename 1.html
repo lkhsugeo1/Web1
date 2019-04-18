@@ -3,20 +3,20 @@
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138235261-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-138235261-1');
-</script>
+<script src="googleanalytices.js"></script>
 
     <title>우리가족-소개</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="color.js"></script>
   </head>
   <body>
     <h1><a href="index.html">우리가족</a></h1>
+    <input type="button" value="night" onclick="
+        nightDayHandler(this);
+    ">
+
 <div id="grid">
     <ol>
       <li><a href="1.html">소개</a></li>
@@ -49,8 +49,9 @@
       <p><img src="가족사진.jpg" width="400"></p>
       <p><iframe width="560" height="315"
       src="민재.mp4" frameborder="0"
-      allow="accelerometer; autoplay; encrypted-media; gyroscope;
-      picture-in-picture" allowfullscreen></iframe></p>
+      allow="accelerometer; autoplay; encrypted-media; gyroscope;picture-in-picture
+        allowfullscreen"
+      ></iframe></p>
       <p style="magin-top:45px;">우리가족은 2016년까지 한국에서 잘 살고 있었는데
         방랑벽이 있는 서뚱이 때문에 2017년부터 베트남 호치민에서 살고 있습니다.
         서뚱인 미세먼지 때문에 한국에 가기 싫어하고, 클놈은 한국의 치열한
