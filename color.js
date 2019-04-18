@@ -28,13 +28,13 @@ function nightDayHandler(self){
     Body.setColor('white');
     self.value = 'day';
 
-    Likns.setColor('powderblue');
+    Links.setColor('powderblue');
 
   } else{
     Body.setBackgroundColor('white');
     Body.setColor('black');
     self.value = 'night';
 
-    Likns.setColor('blue');
+    Links.setColor('blue');
     }
 }
