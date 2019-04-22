@@ -12,23 +12,59 @@
     <script src="color.js"></script>
   </head>
   <body>
-    <h1><a href="index.html">우리가족</a></h1>
+    <h1><a href="#!index" onclick="fetchPage('index')">우리가족</a></h1>
     <input type="button" value="night" onclick="
         nightDayHandler(this);
     ">
   <div id="grid">
-    <ol>
-      <li><a href="1.html">소개</a></li>
-      <li><a href="2.html">근황</a></li>
-      <li><a href="3.html">미래</a></li>
-    </ol>
+        <ol id="nav">
+          <!--<li><a href="#!1" onclick="fetchPage('1')">소개</a></li>
+          <li><a href="#!2" onclick="fetchPage('2')">근황</a></li>
+          <li><a href="#!3" onclick="fetchPage('3')">미래</a></li>-->
+        </ol>
   <!--<ul></ul>은 번호가 없이 점으로 리스트한다.
   unordered list = ul, ordered list = ol, list = li-->
     <div id="article">
-      <h2>우리가족</h2>
-      <p>너무나 개성이 넘치는 4가족입니다. 정말 하루도 조용할 날이 없어요.</P>
+      <article>
+
+       </article>
+       <script>
+         function fetchPage(name){
+           fetch(name).then(function(response){
+             response.text().then(function(text){
+               document.querySelector('article').innerHTML = text;
+             })
+           });
+         }
+
+         if(location.hash){
+           fetchPage(location.hash.substr(2))
+         } else{
+           fetchPage('welcome')
+         }
+
+         fetch('list').then(function(response){
+           response.text().then(function(text){
+             var items = text.split(',');
+             var i = 0;
+             var tags = '';
+             while(i < items.length){
+               var item = items[i];
+               item = item.trim();
+               //<li><a href="#!1" onclick="fetchPage('1')">소개</a></li>
+               var tag = '<li><a href="#!'+item+'" onclick="fetchPage(\''+item+'\')">'+item+'</a></li>';
+               tags = tags + tag;
+               i = i + 1;
+               }
+             document.querySelector('#nav').innerHTML = tags;
+           })
+         });
+
+       </script>
     </div>
   </div>
+
+
 
     <!--<br>은 break로 줄바끔해 준다. 닫힘 태그(</br>)는 없다.-->
 
